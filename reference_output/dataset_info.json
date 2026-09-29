@@ -1,0 +1,25 @@
+{
+  "official_repo": "https://github.com/fathomnet/fgvc-comp-2025",
+  "official_repo_commit": "297d7d26905f6dcc3bacd194cfb74dbbd5963b52",
+  "dataset_train_json_sha256": "cb5c6017925c0bb64dd5ae659dcc4666151e848a3e52cef75b91a0b005ebe3be",
+  "crop_size": [
+    224,
+    224
+  ],
+  "image_format": "JPEG",
+  "jpeg_quality": 95,
+  "resize_interpolation": "PIL bicubic",
+  "crop": "PIL crop (x, y, x+w, y+h), clipped to image bounds, converted to RGB",
+  "script": "prepare_fathomnet2025.py",
+  "script_version": "1.0.0",
+  "script_sha256": "0f339091543eb05c0aaed2a8ea745478a61eb6b712a9501e510dc919340c7a7f",
+  "script_git_commit": "6083fe4c5b07edc476599e52a8fdb0edc43b3353",
+  "generated_at_utc": "2026-09-29T13:01:09+00:00",
+  "python": "3.11.15",
+  "pillow": "12.3.0",
+  "smoke_test_limit_images": null,
+  "n_annotations_in_json": 23699,
+  "n_crops": 23698,
+  "n_failed": 1,
+  "fathomnet_package": "1.10.1"
+}

@@ -1,0 +1,80 @@
+concept_name,label_rank,label_rank_inferred,kingdom,phylum,class,order,family,genus,species
+Abyssocucumis abyssorum,species,0,Animalia,Echinodermata,Holothuroidea,Dendrochirotida,Cucumariidae,Abyssocucumis,Abyssocucumis abyssorum
+Acanthascinae,subfamily,0,Animalia,Porifera,Hexactinellida,Lyssacinosida,Rossellidae,,
+Acanthoptilum,genus,0,Animalia,Cnidaria,Octocorallia,Scleralcyonacea,Virgulariidae,Acanthoptilum,
+Actinernus,genus,0,Animalia,Cnidaria,Hexacorallia,Actiniaria,Actinernidae,Actinernus,
+Actiniaria,order,0,Animalia,Cnidaria,Hexacorallia,Actiniaria,,,
+Actinopterygii,gigaclass,0,Animalia,Chordata,,,,,
+Amphipoda,order,0,Animalia,Arthropoda,Malacostraca,Amphipoda,,,
+Apostichopus leukothele,species,0,Animalia,Echinodermata,Holothuroidea,Synallactida,Stichopodidae,Apostichopus,Apostichopus leukothele
+Asbestopluma,genus,0,Animalia,Porifera,Demospongiae,Poecilosclerida,Cladorhizidae,Asbestopluma,
+Asbestopluma monticola,species,0,Animalia,Porifera,Demospongiae,Poecilosclerida,Cladorhizidae,Asbestopluma,Asbestopluma monticola
+Asteroidea,class,0,Animalia,Echinodermata,Asteroidea,,,,
+Benthocodon pedunculata,species,0,Animalia,Cnidaria,Hydrozoa,Trachymedusae,Rhopalonematidae,Benthocodon,Benthocodon pedunculata
+Brisingida,order,0,Animalia,Echinodermata,Asteroidea,Brisingida,,,
+Caridea,infraorder,0,Animalia,Arthropoda,Malacostraca,Decapoda,,,
+Ceriantharia,order,0,Animalia,Cnidaria,Hexacorallia,Ceriantharia,,,
+Chionoecetes tanneri,species,0,Animalia,Arthropoda,Malacostraca,Decapoda,Oregoniidae,Chionoecetes,Chionoecetes tanneri
+Chorilia longipes,species,0,Animalia,Arthropoda,Malacostraca,Decapoda,Epialtidae,Chorilia,Chorilia longipes
+Corallimorphus pilatus,species,0,Animalia,Cnidaria,Hexacorallia,Corallimorpharia,Corallimorphidae,Corallimorphus,Corallimorphus pilatus
+Crinoidea,class,0,Animalia,Echinodermata,Crinoidea,,,,
+Delectopecten,genus,0,Animalia,Mollusca,Bivalvia,Pectinida,Pectinidae,Delectopecten,
+Elpidia,genus,0,Animalia,Echinodermata,Holothuroidea,Elasipodida,Elpidiidae,Elpidia,
+Farrea,genus,0,Animalia,Porifera,Hexactinellida,Sceptrulophora,Farreidae,Farrea,
+Florometra serratissima,species,0,Animalia,Echinodermata,Crinoidea,Comatulida,Antedonidae,Florometra,Florometra serratissima
+Funiculina,genus,0,Animalia,Cnidaria,Octocorallia,Scleralcyonacea,Funiculinidae,Funiculina,
+Gastropoda,class,0,Animalia,Mollusca,Gastropoda,,,,
+Gersemia juliepackardae,species,0,Animalia,Cnidaria,Octocorallia,Malacalcyonacea,Alcyoniidae,Gersemia,Gersemia juliepackardae
+Heterocarpus,genus,0,Animalia,Arthropoda,Malacostraca,Decapoda,Pandalidae,Heterocarpus,
+Heterochone calyx,species,0,Animalia,Porifera,Hexactinellida,Sceptrulophora,Aphrocallistidae,Heterochone,Heterochone calyx
+Heteropolypus ritteri,species,0,Animalia,Cnidaria,Octocorallia,Scleralcyonacea,Coralliidae,Heteropolypus,Heteropolypus ritteri
+Hexactinellida,class,0,Animalia,Porifera,Hexactinellida,,,,
+Hippasteria,genus,0,Animalia,Echinodermata,Asteroidea,Valvatida,Goniasteridae,Hippasteria,
+Holothuroidea,class,0,Animalia,Echinodermata,Holothuroidea,,,,
+Hormathiidae,family,0,Animalia,Cnidaria,Hexacorallia,Actiniaria,Hormathiidae,,
+Isidella tentaculum,species,0,Animalia,Cnidaria,Octocorallia,Scleralcyonacea,Keratoisididae,Isidella,Isidella tentaculum
+Isididae,family,0,Animalia,Cnidaria,Octocorallia,Malacalcyonacea,Isididae,,
+Isosicyonis,genus,0,Animalia,Cnidaria,Hexacorallia,Actiniaria,Actiniidae,Isosicyonis,
+Keratoisis,genus,0,Animalia,Cnidaria,Octocorallia,Scleralcyonacea,Keratoisididae,Keratoisis,
+Liponema brevicorne,species,0,Animalia,Cnidaria,Hexacorallia,Actiniaria,Liponematidae,Liponema,Liponema brevicorne
+Lithodidae,family,0,Animalia,Arthropoda,Malacostraca,Decapoda,Lithodidae,,
+Mediaster aequalis,species,0,Animalia,Echinodermata,Asteroidea,Valvatida,Goniasteridae,Mediaster,Mediaster aequalis
+Merluccius productus,species,0,Animalia,Chordata,Teleostei,Gadiformes,Merlucciidae,Merluccius,Merluccius productus
+Metridium farcimen,species,0,Animalia,Cnidaria,Hexacorallia,Actiniaria,Metridiidae,Metridium,Metridium farcimen
+Microstomus pacificus,species,0,Animalia,Chordata,Teleostei,Pleuronectiformes,Pleuronectidae,Microstomus,Microstomus pacificus
+Munidopsis,genus,0,Animalia,Arthropoda,Malacostraca,Decapoda,Munidopsidae,Munidopsis,
+Munnopsidae,family,0,Animalia,Arthropoda,Malacostraca,Isopoda,Munnopsidae,,
+Mycale,genus,0,Animalia,Porifera,Demospongiae,Poecilosclerida,Mycalidae,Mycale,
+Octopus rubescens,species,0,Animalia,Mollusca,Cephalopoda,Octopoda,Octopodidae,Octopus,Octopus rubescens
+Ophiacanthidae,family,0,Animalia,Echinodermata,Ophiuroidea,Ophiacanthida,Ophiacanthidae,,
+Ophiuroidea,class,0,Animalia,Echinodermata,Ophiuroidea,,,,
+Paelopatides confundens,species,0,Animalia,Echinodermata,Holothuroidea,Synallactida,Synallactidae,Paelopatides,Paelopatides confundens
+Pandalus amplus,species,0,Animalia,Arthropoda,Malacostraca,Decapoda,Pandalidae,Pandalus,Pandalus amplus
+Pandalus platyceros,species,0,Animalia,Arthropoda,Malacostraca,Decapoda,Pandalidae,Pandalus,Pandalus platyceros
+Pannychia moseleyi,species,0,Animalia,Echinodermata,Holothuroidea,Elasipodida,Laetmogonidae,Pannychia,Pannychia moseleyi
+Paragorgia,genus,0,Animalia,Cnidaria,Octocorallia,Scleralcyonacea,Coralliidae,Paragorgia,
+Paragorgia arborea,species,0,Animalia,Cnidaria,Octocorallia,Scleralcyonacea,Coralliidae,Paragorgia,Paragorgia arborea
+Paralomis multispina,species,0,Animalia,Arthropoda,Malacostraca,Decapoda,Lithodidae,Paralomis,Paralomis multispina
+Parastenella,genus,0,Animalia,Cnidaria,Octocorallia,Scleralcyonacea,Primnoidae,Parastenella,
+Peniagone,genus,0,Animalia,Echinodermata,Holothuroidea,Elasipodida,Elpidiidae,Peniagone,
+Pennatula phosphorea,species,0,Animalia,Cnidaria,Octocorallia,Scleralcyonacea,Pennatulidae,Pennatula,Pennatula phosphorea
+Porifera,phylum,0,Animalia,Porifera,,,,,
+Psathyrometra fragilis,species,0,Animalia,Echinodermata,Crinoidea,Comatulida,Zenometridae,Psathyrometra,Psathyrometra fragilis
+Psolus squamatus,species,0,Animalia,Echinodermata,Holothuroidea,Dendrochirotida,Psolidae,Psolus,Psolus squamatus
+Ptychogastria polaris,species,0,Animalia,Cnidaria,Hydrozoa,Trachymedusae,Ptychogastriidae,Ptychogastria,Ptychogastria polaris
+Pyrosoma atlanticum,species,0,Animalia,Chordata,Thaliacea,Pyrosomatida,Pyrosomatidae,Pyrosoma,Pyrosoma atlanticum
+Rathbunaster californicus,species,0,Animalia,Echinodermata,Asteroidea,Forcipulatida,Asteriidae,Rathbunaster,Rathbunaster californicus
+Scleractinia,order,0,Animalia,Cnidaria,Hexacorallia,Scleractinia,,,
+Scotoplanes,genus,0,Animalia,Echinodermata,Holothuroidea,Elasipodida,Elpidiidae,Scotoplanes,
+Scotoplanes globosa,species,0,Animalia,Echinodermata,Holothuroidea,Elasipodida,Elpidiidae,Scotoplanes,Scotoplanes globosa
+Sebastes,genus,0,Animalia,Chordata,Teleostei,Perciformes,Sebastidae,Sebastes,
+Sebastes diploproa,species,0,Animalia,Chordata,Teleostei,Perciformes,Sebastidae,Sebastes,Sebastes diploproa
+Sebastolobus,genus,0,Animalia,Chordata,Teleostei,Perciformes,Sebastidae,Sebastolobus,
+Serpulidae,family,0,Animalia,Annelida,Polychaeta,Sabellida,Serpulidae,,
+Staurocalyptus,genus,0,Animalia,Porifera,Hexactinellida,Lyssacinosida,Rossellidae,Staurocalyptus,
+Strongylocentrotus fragilis,species,1,Animalia,Echinodermata,Echinoidea,Camarodonta,Strongylocentrotidae,Strongylocentrotus,Strongylocentrotus fragilis
+Terebellidae,family,1,Animalia,Annelida,Polychaeta,Terebellida,Terebellidae,,
+Tunicata,subphylum,0,Animalia,Chordata,,,,,
+Umbellula,genus,0,Animalia,Cnidaria,Octocorallia,Scleralcyonacea,Umbellulidae,Umbellula,
+Vesicomyidae,family,0,Animalia,Mollusca,Bivalvia,Venerida,Vesicomyidae,,
+Zoantharia,order,0,Animalia,Cnidaria,Hexacorallia,Zoantharia,,,

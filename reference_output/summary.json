@@ -1,0 +1,328 @@
+{
+ "categories": 79,
+ "annotations_in_json": 23699,
+ "crops_generated": 23698,
+ "failed": 1,
+ "taxonomy_lookup_errors": {},
+ "label_rank_counts": {
+  "species": 33,
+  "genus": 21,
+  "family": 8,
+  "order": 6,
+  "class": 6,
+  "phylum": 1,
+  "other/unknown": 4
+ },
+ "unique_groups": {
+  "phylum": 7,
+  "class": 17,
+  "order": 32,
+  "family": 49,
+  "genus": 49,
+  "species": 33
+ },
+ "samples_per_group": {
+  "phylum": {
+   "Cnidaria": 7200,
+   "Echinodermata": 6299,
+   "Arthropoda": 3300,
+   "Porifera": 2700,
+   "Chordata": 2399,
+   "Mollusca": 1200,
+   "Annelida": 600
+  },
+  "class": {
+   "Octocorallia": 3600,
+   "Malacostraca": 3300,
+   "Hexacorallia": 3000,
+   "Holothuroidea": 2999,
+   "Asteroidea": 1500,
+   "Hexactinellida": 1500,
+   "Teleostei": 1499,
+   "Crinoidea": 900,
+   "(label above this rank)": 900,
+   "Demospongiae": 900,
+   "Polychaeta": 600,
+   "Bivalvia": 600,
+   "Ophiuroidea": 600,
+   "Hydrozoa": 600,
+   "Echinoidea": 300,
+   "Gastropoda": 300,
+   "Cephalopoda": 300,
+   "Thaliacea": 300
+  },
+  "order": {
+   "Scleralcyonacea": 3000,
+   "Decapoda": 2700,
+   "(label above this rank)": 2700,
+   "Actiniaria": 1800,
+   "Elasipodida": 1499,
+   "Poecilosclerida": 900,
+   "Perciformes": 899,
+   "Synallactida": 600,
+   "Valvatida": 600,
+   "Sceptrulophora": 600,
+   "Malacalcyonacea": 600,
+   "Dendrochirotida": 600,
+   "Trachymedusae": 600,
+   "Lyssacinosida": 600,
+   "Comatulida": 600,
+   "Isopoda": 300,
+   "Sabellida": 300,
+   "Pectinida": 300,
+   "Terebellida": 300,
+   "Ceriantharia": 300,
+   "Forcipulatida": 300,
+   "Camarodonta": 300,
+   "Octopoda": 300,
+   "Pleuronectiformes": 300,
+   "Scleractinia": 300,
+   "Gadiformes": 300,
+   "Brisingida": 300,
+   "Pyrosomatida": 300,
+   "Zoantharia": 300,
+   "Ophiacanthida": 300,
+   "Corallimorpharia": 300,
+   "Amphipoda": 300,
+   "Venerida": 300
+  },
+  "family": {
+   "(label above this rank)": 4800,
+   "Elpidiidae": 1199,
+   "Pandalidae": 900,
+   "Coralliidae": 900,
+   "Sebastidae": 899,
+   "Keratoisididae": 600,
+   "Goniasteridae": 600,
+   "Rossellidae": 600,
+   "Cladorhizidae": 600,
+   "Lithodidae": 600,
+   "Stichopodidae": 300,
+   "Munnopsidae": 300,
+   "Oregoniidae": 300,
+   "Munidopsidae": 300,
+   "Serpulidae": 300,
+   "Pectinidae": 300,
+   "Aphrocallistidae": 300,
+   "Terebellidae": 300,
+   "Isididae": 300,
+   "Asteriidae": 300,
+   "Synallactidae": 300,
+   "Cucumariidae": 300,
+   "Strongylocentrotidae": 300,
+   "Psolidae": 300,
+   "Liponematidae": 300,
+   "Farreidae": 300,
+   "Actinernidae": 300,
+   "Laetmogonidae": 300,
+   "Rhopalonematidae": 300,
+   "Octopodidae": 300,
+   "Pleuronectidae": 300,
+   "Primnoidae": 300,
+   "Hormathiidae": 300,
+   "Actiniidae": 300,
+   "Umbellulidae": 300,
+   "Metridiidae": 300,
+   "Merlucciidae": 300,
+   "Funiculinidae": 300,
+   "Pyrosomatidae": 300,
+   "Virgulariidae": 300,
+   "Epialtidae": 300,
+   "Mycalidae": 300,
+   "Antedonidae": 300,
+   "Zenometridae": 300,
+   "Alcyoniidae": 300,
+   "Ophiacanthidae": 300,
+   "Corallimorphidae": 300,
+   "Ptychogastriidae": 300,
+   "Pennatulidae": 300,
+   "Vesicomyidae": 300
+  }
+ },
+ "top10_groups": {
+  "phylum": [
+   [
+    "Cnidaria",
+    7200
+   ],
+   [
+    "Echinodermata",
+    6299
+   ],
+   [
+    "Arthropoda",
+    3300
+   ],
+   [
+    "Porifera",
+    2700
+   ],
+   [
+    "Chordata",
+    2399
+   ],
+   [
+    "Mollusca",
+    1200
+   ],
+   [
+    "Annelida",
+    600
+   ]
+  ],
+  "class": [
+   [
+    "Octocorallia",
+    3600
+   ],
+   [
+    "Malacostraca",
+    3300
+   ],
+   [
+    "Hexacorallia",
+    3000
+   ],
+   [
+    "Holothuroidea",
+    2999
+   ],
+   [
+    "Asteroidea",
+    1500
+   ],
+   [
+    "Hexactinellida",
+    1500
+   ],
+   [
+    "Teleostei",
+    1499
+   ],
+   [
+    "Crinoidea",
+    900
+   ],
+   [
+    "(label above this rank)",
+    900
+   ],
+   [
+    "Demospongiae",
+    900
+   ]
+  ],
+  "order": [
+   [
+    "Scleralcyonacea",
+    3000
+   ],
+   [
+    "Decapoda",
+    2700
+   ],
+   [
+    "(label above this rank)",
+    2700
+   ],
+   [
+    "Actiniaria",
+    1800
+   ],
+   [
+    "Elasipodida",
+    1499
+   ],
+   [
+    "Poecilosclerida",
+    900
+   ],
+   [
+    "Perciformes",
+    899
+   ],
+   [
+    "Synallactida",
+    600
+   ],
+   [
+    "Valvatida",
+    600
+   ],
+   [
+    "Sceptrulophora",
+    600
+   ]
+  ],
+  "family": [
+   [
+    "(label above this rank)",
+    4800
+   ],
+   [
+    "Elpidiidae",
+    1199
+   ],
+   [
+    "Pandalidae",
+    900
+   ],
+   [
+    "Coralliidae",
+    900
+   ],
+   [
+    "Sebastidae",
+    899
+   ],
+   [
+    "Keratoisididae",
+    600
+   ],
+   [
+    "Goniasteridae",
+    600
+   ],
+   [
+    "Rossellidae",
+    600
+   ],
+   [
+    "Cladorhizidae",
+    600
+   ],
+   [
+    "Lithodidae",
+    600
+   ]
+  ]
+ },
+ "categories_lost": [],
+ "per_category_samples": {
+  "min": 299,
+  "max": 300,
+  "categories_with_exactly_300": 77,
+  "deviating": {
+   "Elpidia": 299,
+   "Sebastes diploproa": 299
+  }
+ },
+ "integrity": {
+  "n_images": 8981,
+  "n_categories": 79,
+  "n_annotations": 23699,
+  "expected_annotations_if_79x300": 23700,
+  "unique_annotation_ids": true,
+  "annotations_with_invalid_image": 0,
+  "annotations_with_invalid_category": 0,
+  "bboxes_extending_outside_image_(will_be_clipped)": 16,
+  "bboxes_empty_after_clipping": 1,
+  "categories_without_annotations": [],
+  "per_category_min": 299,
+  "per_category_max": 300,
+  "per_category_median": 300,
+  "categories_not_exactly_300": {
+   "Elpidia": 299
+  }
+ }
+}

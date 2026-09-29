@@ -1,0 +1,80 @@
+category_id,concept_name,n_annotations_json,n_crops
+1,Abyssocucumis abyssorum,300,300
+2,Acanthascinae,300,300
+3,Acanthoptilum,300,300
+4,Actinernus,300,300
+5,Actiniaria,300,300
+6,Actinopterygii,300,300
+7,Amphipoda,300,300
+8,Apostichopus leukothele,300,300
+9,Asbestopluma,300,300
+10,Asbestopluma monticola,300,300
+11,Asteroidea,300,300
+12,Benthocodon pedunculata,300,300
+13,Brisingida,300,300
+14,Caridea,300,300
+15,Ceriantharia,300,300
+16,Chionoecetes tanneri,300,300
+17,Chorilia longipes,300,300
+18,Corallimorphus pilatus,300,300
+19,Crinoidea,300,300
+20,Delectopecten,300,300
+21,Elpidia,299,299
+22,Farrea,300,300
+23,Florometra serratissima,300,300
+24,Funiculina,300,300
+25,Gastropoda,300,300
+26,Gersemia juliepackardae,300,300
+27,Heterocarpus,300,300
+28,Heterochone calyx,300,300
+29,Heteropolypus ritteri,300,300
+30,Hexactinellida,300,300
+31,Hippasteria,300,300
+32,Holothuroidea,300,300
+33,Hormathiidae,300,300
+34,Isidella tentaculum,300,300
+35,Isididae,300,300
+36,Isosicyonis,300,300
+37,Keratoisis,300,300
+38,Liponema brevicorne,300,300
+39,Lithodidae,300,300
+40,Mediaster aequalis,300,300
+41,Merluccius productus,300,300
+42,Metridium farcimen,300,300
+43,Microstomus pacificus,300,300
+44,Munidopsis,300,300
+45,Munnopsidae,300,300
+46,Mycale,300,300
+47,Octopus rubescens,300,300
+48,Ophiacanthidae,300,300
+49,Ophiuroidea,300,300
+50,Paelopatides confundens,300,300
+51,Pandalus amplus,300,300
+52,Pandalus platyceros,300,300
+53,Pannychia moseleyi,300,300
+54,Paragorgia,300,300
+55,Paragorgia arborea,300,300
+56,Paralomis multispina,300,300
+57,Parastenella,300,300
+58,Peniagone,300,300
+59,Pennatula phosphorea,300,300
+60,Porifera,300,300
+61,Psathyrometra fragilis,300,300
+62,Psolus squamatus,300,300
+63,Ptychogastria polaris,300,300
+64,Pyrosoma atlanticum,300,300
+65,Rathbunaster californicus,300,300
+66,Scleractinia,300,300
+67,Scotoplanes,300,300
+68,Scotoplanes globosa,300,300
+69,Sebastes,300,300
+70,Sebastes diploproa,300,299
+71,Sebastolobus,300,300
+72,Serpulidae,300,300
+73,Staurocalyptus,300,300
+74,Strongylocentrotus fragilis,300,300
+75,Terebellidae,300,300
+76,Tunicata,300,300
+77,Umbellula,300,300
+78,Vesicomyidae,300,300
+79,Zoantharia,300,300

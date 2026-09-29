@@ -1,0 +1,76 @@
+FathomNet 2025 compact dataset
+
+Categories: 79
+Annotations in official JSON: 23699 (nominal 79 x 300 = 23700)
+Crops successfully generated: 23698
+Failed: 1
+
+Label ranks:
+  species: 33
+  genus: 21
+  family: 8
+  order: 6
+  class: 6
+  phylum: 1
+  other/unknown: 4
+
+Unique taxonomic groups:
+  phyla: 7
+  classes: 17
+  orders: 32
+  families: 49
+  genera: 49
+  species: 33
+
+Disk usage: 252.0 MB
+
+Top 10 phylum groups by ROI samples:
+    7200  Cnidaria
+    6299  Echinodermata
+    3300  Arthropoda
+    2700  Porifera
+    2399  Chordata
+    1200  Mollusca
+     600  Annelida
+
+Top 10 class groups by ROI samples:
+    3600  Octocorallia
+    3300  Malacostraca
+    3000  Hexacorallia
+    2999  Holothuroidea
+    1500  Asteroidea
+    1500  Hexactinellida
+    1499  Teleostei
+     900  Crinoidea
+     900  (label above this rank)
+     900  Demospongiae
+
+Top 10 order groups by ROI samples:
+    3000  Scleralcyonacea
+    2700  Decapoda
+    2700  (label above this rank)
+    1800  Actiniaria
+    1499  Elasipodida
+     900  Poecilosclerida
+     899  Perciformes
+     600  Synallactida
+     600  Valvatida
+     600  Sceptrulophora
+
+Top 10 family groups by ROI samples:
+    4800  (label above this rank)
+    1199  Elpidiidae
+     900  Pandalidae
+     900  Coralliidae
+     899  Sebastidae
+     600  Keratoisididae
+     600  Goniasteridae
+     600  Rossellidae
+     600  Cladorhizidae
+     600  Lithodidae
+
+Samples per category: min 299, max 300; 77/79 categories have exactly 300
+  deviating: Elpidia=299, Sebastes diploproa=299
+Categories lost: none
+
+JSON integrity: {"n_images": 8981, "n_categories": 79, "n_annotations": 23699, "expected_annotations_if_79x300": 23700, "unique_annotation_ids": true, "annotations_with_invalid_image": 0, "annotations_with_invalid_category": 0, "bboxes_extending_outside_image_(will_be_clipped)": 16, "bboxes_empty_after_clipping": 1, "categories_without_annotations": [], "per_category_min": 299, "per_category_max": 300, "per_category_median": 300}

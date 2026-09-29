@@ -250,6 +250,16 @@ def worms_lineage(name):
             lineage[rank] = node.name
         label_rank = rank
         node = node.children[0] if node.children else None
+    if not label_rank:
+        # WoRMS returns an empty rank for some leaf taxa (e.g. Terebellidae): infer from the name
+        last = name.split()
+        label_rank = ("species" if len(last) == 2 else "family" if name.endswith("idae")
+                      else "subfamily" if name.endswith("inae") else "")
+        lineage["label_rank_inferred"] = True
+        if label_rank in RANKS:
+            lineage[label_rank] = name
+        if label_rank == "species":
+            lineage.setdefault("genus", last[0])
     lineage["label_rank"] = label_rank
     return lineage
 
@@ -269,6 +279,7 @@ def build_taxonomy(names, cache_path, lookup=worms_lineage):
                 continue
         lin = cache[name]
         rows.append({"concept_name": name, "label_rank": lin.get("label_rank", ""),
+                     "label_rank_inferred": int(bool(lin.get("label_rank_inferred"))),
                      **{r: lin.get(r, "") or "" for r in RANKS}})
     return rows, errors
 
@@ -402,7 +413,7 @@ def main(argv=None, taxonomy_lookup=worms_lineage):
         print("Querying taxonomy (cached) ...")
         tax_rows, tax_errors = build_taxonomy([c["name"] for c in cats.values()],
                                               out / "taxonomy_cache.json", taxonomy_lookup)
-        write_csv(out / "taxonomy.csv", ["concept_name", "label_rank"] + RANKS, tax_rows)
+        write_csv(out / "taxonomy.csv", ["concept_name", "label_rank", "label_rank_inferred"] + RANKS, tax_rows)
 
     disk = human(dir_size(out))
     if tax_rows:

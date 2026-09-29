@@ -18,3 +18,9 @@ dataset_info.json,summary.txt,summary.json,failures.csv}`.
 Known properties of the official JSON (checked by the script): 23,699 annotations (not 23,700),
 16 boxes slightly leave the image (clipped, flagged in `bbox_clipped`), 1 box lies fully outside
 its image and cannot be cropped (reported in `failures.csv`).
+
+## Verified run
+A full run (real downloads, 8 workers, ~15 min) produced 23,698 of 23,699 crops (252 MB), all
+79 categories present, 1 failure (annotation 21685). Its summaries are in `reference_output/`
+so students can compare their own results. `taxonomy.csv` has a `label_rank_inferred` column:
+WoRMS returns an empty rank for a few leaf taxa (e.g. Terebellidae), so the rank is inferred from the name.
