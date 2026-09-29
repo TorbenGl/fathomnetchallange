@@ -5,6 +5,11 @@ full-resolution images are never written to disk) from the official
 [`fathomnet/fgvc-comp-2025`](https://github.com/fathomnet/fgvc-comp-2025) `dataset_train.json`.
 
 ```bash
+# Step-by-step notebook (recommended for students):
+pip install -r requirements.txt -r requirements-notebook.txt
+jupyter lab fathomnet2025_walkthrough.ipynb   # ships with executed outputs
+
+# or the plain script:
 pip install -r requirements.txt
 python tests/test_offline.py            # optional: offline self-test (needs numpy; clones nothing)
 python prepare_fathomnet2025.py --limit-images 20   # smoke test with real downloads
@@ -24,3 +29,5 @@ A full run (real downloads, 8 workers, ~15 min) produced 23,698 of 23,699 crops 
 79 categories present, 1 failure (annotation 21685). Its summaries are in `reference_output/`
 so students can compare their own results. `taxonomy.csv` has a `label_rank_inferred` column:
 WoRMS returns an empty rank for a few leaf taxa (e.g. Terebellidae), so the rank is inferred from the name.
+
+See `KNOWN_ISSUES.md` for all pitfalls found in the data and the tooling.
