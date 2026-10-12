@@ -1,0 +1,10 @@
+# course requirements (Colab already has most of them)
+numpy
+pandas
+matplotlib
+pillow
+requests
+scikit-learn
+torch
+torchvision
+fathomnet

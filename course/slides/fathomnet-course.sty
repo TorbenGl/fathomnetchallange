@@ -1,0 +1,40 @@
+% Shared look for all course slide decks (metropolis + ocean colours)
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{fathomnet-course}
+\usetheme[progressbar=frametitle, numbering=fraction, block=fill]{metropolis}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{booktabs, tabularx, array, graphicx, xcolor, tikz, amsmath, amssymb}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric, calc, fit, decorations.pathreplacing}
+\definecolor{ocean}{HTML}{0D366B}
+\definecolor{sea}{HTML}{2A78D6}
+\definecolor{coral}{HTML}{EB6834}
+\definecolor{kelp}{HTML}{1BAF7A}
+\definecolor{sand}{HTML}{F4F1EA}
+\definecolor{ink}{HTML}{0B0B0B}
+\definecolor{muted}{HTML}{52514E}
+\setbeamercolor{frametitle}{bg=ocean, fg=white}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{palette primary}{bg=ocean, fg=white}
+\setbeamercolor{progress bar}{fg=coral, bg=ocean!40}
+\setbeamercolor{title separator}{fg=coral}
+\setbeamercolor{normal text}{fg=ink, bg=white}
+\setbeamercolor{alerted text}{fg=coral}
+\setbeamercolor{example text}{fg=kelp!80!black}
+\setbeamercolor{block title}{bg=sea!15, fg=ocean}
+\setbeamercolor{block body}{bg=sea!5}
+\setbeamercolor{block title alerted}{bg=coral!20, fg=coral!60!black}
+\setbeamercolor{block body alerted}{bg=coral!6}
+\setbeamercolor{block title example}{bg=kelp!20, fg=kelp!50!black}
+\setbeamercolor{block body example}{bg=kelp!6}
+\setbeamerfont{frametitle}{size=\large}
+\setbeamertemplate{caption}{\insertcaption}
+\newcommand{\muted}[1]{{\color{muted}#1}}
+\newcommand{\hl}[1]{{\color{coral}\bfseries #1}}
+% "Biology <-> ML" translation box
+\newcommand{\bioml}[2]{\begin{exampleblock}{In biology terms}#1\end{exampleblock}%
+  \begin{block}{In machine-learning terms}#2\end{block}}
+\newcommand{\task}[1]{\begin{alertblock}{Your turn}#1\end{alertblock}}
+\newcommand{\coursetitle}{Can a computer identify deep-sea animals?}
+\newcommand{\coursesubtitle}{A hands-on classifier project with FathomNet 2025}
+\endinput

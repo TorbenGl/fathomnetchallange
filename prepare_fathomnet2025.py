@@ -365,6 +365,8 @@ def main(argv=None, taxonomy_lookup=worms_lineage):
     ap.add_argument("--interpolation", choices=INTERPOLATIONS, default="bicubic",
                     help="PIL resize filter (bicubic = PIL default)")
     ap.add_argument("--limit-images", type=int, help="only process the first N images (smoke test)")
+    ap.add_argument("--per-category", type=int,
+                    help="only the first N annotations (by id) of every category: a balanced, faster subset")
     ap.add_argument("--force", action="store_true", help="re-create crops that already exist")
     ap.add_argument("--skip-taxonomy", action="store_true")
     args = ap.parse_args(argv)
@@ -388,6 +390,15 @@ def main(argv=None, taxonomy_lookup=worms_lineage):
         keep = {im["id"] for im in data["images"][:args.limit_images]}
         anns = [a for a in anns if a["image_id"] in keep]
         print(f"SMOKE TEST: limited to {len(keep)} images / {len(anns)} annotations")
+    if args.per_category:
+        seen = Counter()
+        kept = []
+        for a in sorted(anns, key=lambda a: a["id"]):
+            if seen[a["category_id"]] < args.per_category:
+                seen[a["category_id"]] += 1
+                kept.append(a)
+        anns = kept
+        print(f"SUBSET: at most {args.per_category} annotations per category -> {len(anns)} annotations")
     anns = [a for a in anns if a["image_id"] in images and a["category_id"] in cats]
 
     print("Downloading + cropping ...")
@@ -437,6 +448,7 @@ def main(argv=None, taxonomy_lookup=worms_lineage):
         "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "python": sys.version.split()[0], "pillow": Image.__version__,
         "smoke_test_limit_images": args.limit_images,
+        "per_category_limit": args.per_category,
         "n_annotations_in_json": len(data["annotations"]),
         "n_crops": len(rows), "n_failed": len(failures),
     }

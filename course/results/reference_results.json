@@ -1,0 +1,450 @@
+{
+ "dataset": {
+  "crops_clean": 23664,
+  "crops_raw": 23698,
+  "labels": 79,
+  "images": 8979,
+  "dives": 1465,
+  "share_box_lt32": 0.19316260987153483,
+  "top10_dives_share": 0.20545977011494254
+ },
+ "two_features": {
+  "n_train": 444,
+  "n_test": 148,
+  "threshold": 0.05,
+  "thr_train_acc": 0.9842342342342343,
+  "thr_test_acc": 0.9797297297297297
+ },
+ "boundaries": {
+  "boundary_centroid": {
+   "train": 0.972972972972973,
+   "test": 0.972972972972973
+  },
+  "boundary_knn5": {
+   "train": 0.9954954954954955,
+   "test": 0.9932432432432432
+  },
+  "boundary_tree2": {
+   "train": 0.9977477477477478,
+   "test": 1.0
+  },
+  "hard_knn1": {
+   "train": 1.0,
+   "test": 0.6866666666666666
+  },
+  "hard_knn101": {
+   "train": 0.6844444444444444,
+   "test": 0.7866666666666666
+  }
+ },
+ "tree2_text": "|--- redness <= 0.00\n|   |--- redness <= -0.06\n|   |   |--- class: Pyrosoma atlanticum\n|   |--- redness >  -0.06\n|   |   |--- class: Pyrosoma atlanticum\n|--- redness >  0.00\n|   |--- brightness <= 0.28\n|   |   |--- class: Pyrosoma atlanticum\n|   |--- brightness >  0.28\n|   |   |--- class: Ptychogastria polaris\n",
+ "hard_pair": {
+  "n_train": 450,
+  "n_test": 150
+ },
+ "knn_sweep": [
+  {
+   "param": 1,
+   "train": 1.0,
+   "test": 0.6866666666666666
+  },
+  {
+   "param": 3,
+   "train": 0.8355555555555556,
+   "test": 0.7133333333333334
+  },
+  {
+   "param": 5,
+   "train": 0.8022222222222222,
+   "test": 0.6733333333333333
+  },
+  {
+   "param": 11,
+   "train": 0.7511111111111111,
+   "test": 0.7066666666666667
+  },
+  {
+   "param": 25,
+   "train": 0.6977777777777778,
+   "test": 0.7733333333333333
+  },
+  {
+   "param": 51,
+   "train": 0.6777777777777778,
+   "test": 0.8133333333333334
+  },
+  {
+   "param": 101,
+   "train": 0.6844444444444444,
+   "test": 0.7866666666666666
+  }
+ ],
+ "tree_sweep": [
+  {
+   "param": 1,
+   "leaves": 2,
+   "train": 0.6666666666666666,
+   "test": 0.7
+  },
+  {
+   "param": 2,
+   "leaves": 4,
+   "train": 0.6777777777777778,
+   "test": 0.7133333333333334
+  },
+  {
+   "param": 3,
+   "leaves": 8,
+   "train": 0.6777777777777778,
+   "test": 0.6733333333333333
+  },
+  {
+   "param": 5,
+   "leaves": 24,
+   "train": 0.7733333333333333,
+   "test": 0.7666666666666667
+  },
+  {
+   "param": 8,
+   "leaves": 66,
+   "train": 0.8688888888888889,
+   "test": 0.6866666666666666
+  },
+  {
+   "param": 12,
+   "leaves": 106,
+   "train": 0.9688888888888889,
+   "test": 0.64
+  },
+  {
+   "param": "none",
+   "leaves": 123,
+   "train": 1.0,
+   "test": 0.6533333333333333
+  }
+ ],
+ "lab1_colourstats": [
+  {
+   "target": "phylum",
+   "classifier": "majority",
+   "test": 0.3035835023664638,
+   "train": 0.3034708136128014
+  },
+  {
+   "target": "phylum",
+   "classifier": "nearest_centroid",
+   "test": 0.26419878296146043,
+   "train": 0.27490421455938696
+  },
+  {
+   "target": "phylum",
+   "classifier": "knn",
+   "test": 0.5496957403651116,
+   "train": 0.6944444444444444
+  },
+  {
+   "target": "phylum",
+   "classifier": "decision_tree",
+   "test": 0.5027045300878973,
+   "train": 0.6781045751633987
+  },
+  {
+   "target": "label",
+   "classifier": "majority",
+   "test": 0.012677484787018255,
+   "train": 0.012677484787018255
+  },
+  {
+   "target": "label",
+   "classifier": "nearest_centroid",
+   "test": 0.15889114266396215,
+   "train": 0.1606378183457291
+  },
+  {
+   "target": "label",
+   "classifier": "knn",
+   "test": 0.3363759296822177,
+   "train": 0.5381451431147172
+  },
+  {
+   "target": "label",
+   "classifier": "decision_tree",
+   "test": 0.23732251521298176,
+   "train": 0.367816091954023
+  }
+ ],
+ "random_logreg": {
+  "accuracy": 0.6372549019607843,
+  "balanced_accuracy": 0.6373264473073732,
+  "macro_f1": 0.6364837151688674
+ },
+ "recall_by_label_rank": [
+  {
+   "label_rank": "class",
+   "mean": 0.43555555555555553,
+   "size": 6
+  },
+  {
+   "label_rank": "family",
+   "mean": 0.6392567567567567,
+   "size": 8
+  },
+  {
+   "label_rank": "genus",
+   "mean": 0.6868897468897469,
+   "size": 21
+  },
+  {
+   "label_rank": "gigaclass",
+   "mean": 0.6266666666666667,
+   "size": 1
+  },
+  {
+   "label_rank": "infraorder",
+   "mean": 0.6,
+   "size": 1
+  },
+  {
+   "label_rank": "order",
+   "mean": 0.5577777777777778,
+   "size": 6
+  },
+  {
+   "label_rank": "phylum",
+   "mean": 0.26666666666666666,
+   "size": 1
+  },
+  {
+   "label_rank": "species",
+   "mean": 0.6742439575316287,
+   "size": 33
+  },
+  {
+   "label_rank": "subfamily",
+   "mean": 0.5066666666666667,
+   "size": 1
+  },
+  {
+   "label_rank": "subphylum",
+   "mean": 0.6,
+   "size": 1
+  }
+ ],
+ "hardest_labels_random": [
+  {
+   "true": "Actiniaria",
+   "recall": 0.2
+  },
+  {
+   "true": "Holothuroidea",
+   "recall": 0.2
+  },
+  {
+   "true": "Porifera",
+   "recall": 0.26666666666666666
+  },
+  {
+   "true": "Hexactinellida",
+   "recall": 0.3333333333333333
+  },
+  {
+   "true": "Sebastes",
+   "recall": 0.33783783783783783
+  },
+  {
+   "true": "Lithodidae",
+   "recall": 0.38666666666666666
+  },
+  {
+   "true": "Heteropolypus ritteri",
+   "recall": 0.38666666666666666
+  },
+  {
+   "true": "Umbellula",
+   "recall": 0.4
+  }
+ ],
+ "splits": [
+  {
+   "split": "random",
+   "classifier": "knn",
+   "accuracy": 0.5349898580121705,
+   "balanced_accuracy": 0.5351278137856949,
+   "macro_f1": 0.5296581534922357,
+   "train_accuracy": 0.699853504620239,
+   "share_dive_seen": 0.9697994140184809,
+   "share_image_seen": 0.7382240252422808
+  },
+  {
+   "split": "random",
+   "classifier": "logistic_regression",
+   "accuracy": 0.635113815641199,
+   "balanced_accuracy": 0.6352161073853462,
+   "macro_f1": 0.6330633949646666,
+   "train_accuracy": 0.9074637517842387,
+   "share_dive_seen": 0.9697994140184809,
+   "share_image_seen": 0.7382240252422808
+  },
+  {
+   "split": "image",
+   "classifier": "knn",
+   "accuracy": 0.4548679149923373,
+   "balanced_accuracy": 0.4549224306224027,
+   "macro_f1": 0.4477135510784962,
+   "train_accuracy": 0.7095527103415583,
+   "share_dive_seen": 0.9127162645781594,
+   "share_image_seen": 0.0
+  },
+  {
+   "split": "image",
+   "classifier": "logistic_regression",
+   "accuracy": 0.5747140246457921,
+   "balanced_accuracy": 0.5743012803789638,
+   "macro_f1": 0.5726492081232023,
+   "train_accuracy": 0.9107515329692566,
+   "share_dive_seen": 0.9127162645781594,
+   "share_image_seen": 0.0
+  },
+  {
+   "split": "dive",
+   "classifier": "knn",
+   "accuracy": 0.3553679317558604,
+   "balanced_accuracy": 0.349163262719644,
+   "macro_f1": 0.34128486372587385,
+   "train_accuracy": 0.7157246465030328,
+   "share_dive_seen": 0.0,
+   "share_image_seen": 0.0
+  },
+  {
+   "split": "dive",
+   "classifier": "logistic_regression",
+   "accuracy": 0.4961455657054423,
+   "balanced_accuracy": 0.4817667080751152,
+   "macro_f1": 0.4735811167741639,
+   "train_accuracy": 0.9101287529050613,
+   "share_dive_seen": 0.0,
+   "share_image_seen": 0.0
+  }
+ ],
+ "dive_logreg": {
+  "accuracy": 0.4978422233730364,
+  "balanced_accuracy": 0.48756416489881943,
+  "macro_f1": 0.4754323289992102
+ },
+ "accuracy_at_rank": {
+  "random": {
+   "phylum": 0.7995267072346179,
+   "class": 0.7585661570901423,
+   "order": 0.7296317496660942,
+   "family": 0.7001696352841391,
+   "genus": 0.689757545769421,
+   "species": 0.6740890688259109
+  },
+  "dive": {
+   "phylum": 0.725530813050233,
+   "class": 0.6753037884203003,
+   "order": 0.634438125122573,
+   "family": 0.5653315824031516,
+   "genus": 0.5457364341085271,
+   "species": 0.5624724061810155
+  }
+ },
+ "severity_dive": {
+  "species": 0.0,
+  "genus": 0.020969405293915434,
+  "family": 0.04022000687521485,
+  "order": 0.14712959779993126,
+  "class": 0.12375386730835339,
+  "phylum": 0.12134754211069096,
+  "kingdom": 0.5465795806118942,
+  "none": 0.0
+ },
+ "severity_random": {
+  "species": 0.0,
+  "genus": 0.020037278657968314,
+  "family": 0.043336439888164026,
+  "order": 0.10531220876048462,
+  "class": 0.13839701770736254,
+  "phylum": 0.1402609506057782,
+  "kingdom": 0.5526561043802423,
+  "none": 0.0
+ },
+ "n_mistakes_dive": 2909,
+ "phylum_confusion_dive": {
+  "labels": [
+   "Cnidaria",
+   "Porifera",
+   "Echinodermata",
+   "Arthropoda",
+   "Mollusca",
+   "Annelida",
+   "Chordata"
+  ],
+  "matrix": [
+   [
+    1233,
+    77,
+    151,
+    42,
+    29,
+    18,
+    40
+   ],
+   [
+    83,
+    510,
+    43,
+    12,
+    20,
+    1,
+    14
+   ],
+   [
+    166,
+    36,
+    1132,
+    93,
+    28,
+    10,
+    47
+   ],
+   [
+    82,
+    17,
+    113,
+    831,
+    18,
+    26,
+    58
+   ],
+   [
+    30,
+    24,
+    20,
+    23,
+    126,
+    1,
+    17
+   ],
+   [
+    16,
+    0,
+    20,
+    10,
+    0,
+    36,
+    5
+   ],
+   [
+    60,
+    13,
+    86,
+    18,
+    23,
+    0,
+    335
+   ]
+  ]
+ },
+ "runtime_minutes": 13.175436504681905
+}

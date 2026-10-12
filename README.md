@@ -1,5 +1,9 @@
 # FathomNet 2025 – compact 224×224 ROI dataset
 
+> **Teaching:** [`course/`](course/README.md) holds a complete 6-session classifier project for biology students
+> built on this dataset: slides with the roadmap, five lab notebooks, a mini-challenge and a final exam (PDFs in
+> [`course/pdf/`](course/pdf)).
+
 Builds a small local copy of the FathomNet 2025 FGVC training set (crops only, 224×224 JPEG,
 full-resolution images are never written to disk) from the official
 [`fathomnet/fgvc-comp-2025`](https://github.com/fathomnet/fgvc-comp-2025) `dataset_train.json`.
@@ -14,6 +18,7 @@ pip install -r requirements.txt
 python tests/test_offline.py            # optional: offline self-test (needs numpy; clones nothing)
 python prepare_fathomnet2025.py --limit-images 20   # smoke test with real downloads
 python prepare_fathomnet2025.py                      # full run, resumable
+python prepare_fathomnet2025.py --per-category 100   # balanced subset: first 100 boxes of every label
 ```
 
 Needs outbound HTTPS to `github.com`, `database.fathomnet.org` (images + WoRMS taxonomy API).

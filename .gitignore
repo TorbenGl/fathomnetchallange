@@ -2,3 +2,9 @@ __pycache__/
 fathomnet2025_compact/
 fgvc-comp-2025/
 fathomnet2025_compact_demo/
+course/features_cache/
+course/build/
+course/results/leaderboard.csv
+course/results/lab2_zoo.csv
+.ipynb_checkpoints/
+course/slides/build/

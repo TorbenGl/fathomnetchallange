@@ -1,0 +1,168 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage{fathomnet-course}
+\input{figures/numbers.tex}
+\title{Mini-challenge, recap and exam preparation}
+\subtitle{\coursetitle\\[2pt]\small Session 5}
+\date{}
+\author{}
+\begin{document}
+\maketitle
+
+\section{The mini-challenge}
+
+\begin{frame}{The task}
+\begin{block}{Build the best classifier for a new expedition}
+79 labels $\cdot$ test set = dives the classifier has never seen (\texttt{data.split(df, "dive", seed=0)}) $\cdot$ score = \textbf{macro-F1}
+\end{block}
+\begin{columns}[T]
+\column{0.5\textwidth}
+\textbf{You may change}
+\begin{itemize}\small
+  \item features (other CNNs: ResNet-50, EfficientNet; combinations)
+  \item classifier and its settings
+  \item which training crops you use
+  \item Level 5: fine-tune a whole CNN on a GPU
+\end{itemize}
+\column{0.46\textwidth}
+\textbf{The rules}
+\begin{enumerate}\small
+  \item The test set is fixed.
+  \item Choose using a \textbf{validation} split inside the training dives.
+  \item Evaluate on the test set \textbf{once}; submit that number.
+\end{enumerate}
+\end{columns}
+\vspace{4pt}
+\muted{\small Reference to beat: CNN (ResNet-18) + logistic regression, macro-F1 \RefDiveFone\ (accuracy \RefDiveAccSingle).}
+\end{frame}
+
+\begin{frame}{Why a validation set?}
+\centering
+\begin{tikzpicture}[>=Stealth, font=\small]
+  \fill[sea!25] (0,0) rectangle (5.5,0.9);
+  \fill[kelp!35] (5.5,0) rectangle (8.6,0.9);
+  \fill[coral!35] (8.6,0) rectangle (11.2,0.9);
+  \node at (2.75,0.45) {\textbf{train} (dives A)};
+  \node at (7.05,0.45) {\textbf{validation} (dives B)};
+  \node at (9.9,0.45) {\textbf{test} (dives C)};
+  \draw[decorate, decoration={brace, amplitude=5pt}] (0,1.05) -- (8.6,1.05) node[midway, above=5pt] {try 20 ideas here, keep the best};
+  \draw[->, thick] (9.9,-0.1) -- (9.9,-0.7) node[below] {use once, at the end};
+\end{tikzpicture}
+
+\vspace{12pt}
+\begin{alertblock}{If you choose on the test set \dots}
+\dots\ you pick the idea that was \emph{lucky} on those particular dives. Your reported score is then too optimistic --
+the same trap as testing on the training set, only smaller.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Your poster (A3, or 4 slides)}
+\small
+\begin{enumerate}
+  \item \textbf{Question \& data} -- one sentence each; acknowledge FathomNet / MBARI.
+  \item \textbf{Method} -- features and classifier, in words a biologist understands. No code.
+  \item \textbf{Results} -- test macro-F1 and accuracy; random vs.\ dive split; one confusion matrix.
+  \item \textbf{Mistakes} -- three mistakes with crops and a biological explanation.
+  \item \textbf{Verdict} -- would you use it for a survey on a new expedition? What must be checked by hand?
+  \item \textbf{What you tried} -- including the ideas that did \emph{not} work.
+\end{enumerate}
+\vspace{4pt}
+\begin{exampleblock}{Graded on}
+correct use of train / validation / test $\cdot$ clear figures $\cdot$ biological interpretation $\cdot$ honest verdict. The score itself is only a small bonus.
+\end{exampleblock}
+\end{frame}
+
+\section{Recap}
+
+\begin{frame}{Recap 1: what a classifier is}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\begin{itemize}\small
+  \item \textbf{classifier}: rule $f(\text{features}) = \text{label}$, learned from a \textbf{training set}
+  \item \textbf{features}: numbers describing a specimen (characters)
+  \item \textbf{decision boundary}: where the predicted label changes
+  \item \textbf{baseline}: always the most common label
+\end{itemize}
+\column{0.48\textwidth}
+\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+nearest centroid & closest average \\
+$k$-NN & vote of $k$ most similar \\
+decision tree & identification key \\
+random forest & many keys, vote \\
+logistic regression & weighted checklist \\
+neural network & checklists of checklists \\
+\bottomrule
+\end{tabular}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Recap 2: features, overfitting, testing}
+\begin{itemize}
+  \item \textbf{Features matter most.} Pixels $<$ colour characters $<$ CNN features (\RefZooBestPixels\ $\rightarrow$ \RefZooBestColour\ $\rightarrow$ \RefZooBest).
+  \item \textbf{Transfer learning}: a CNN trained on everyday photos provides good characters for deep-sea animals.
+  \item \textbf{Overfitting}: training accuracy rises with flexibility, test accuracy does not. Training accuracy measures memory.
+  \item \textbf{Train / validation / test}: learn / choose / report once.
+  \item \textbf{Data leakage}: near-identical crops (same dive) on both sides inflate the result: \RefRandomAcc\ $\rightarrow$ \RefDiveAcc.
+  \item \textbf{Biological severity}: ask how far apart truth and prediction are in the tree of life.
+\end{itemize}
+\end{frame}
+
+\section{The final exam}
+
+\begin{frame}{Final exam -- format}
+\begin{columns}[T]
+\column{0.52\textwidth}
+\begin{itemize}\small
+  \item written, \textbf{90 minutes}, 100 points
+  \item no code; pocket calculator allowed
+  \item one handwritten A4 sheet (both sides) allowed
+\end{itemize}
+\vspace{4pt}
+\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+A. Concepts (short answers) & 20 \\
+B. Accuracy, precision, recall & 20 \\
+C. $k$-NN and a key by hand & 20 \\
+D. Interpreting an experiment & 20 \\
+E. Mistakes in the tree of life & 10 \\
+F. Design a survey classifier & 10 \\
+\bottomrule
+\end{tabular}
+\column{0.44\textwidth}
+\begin{block}{Example question}
+\small A classifier reaches 99\,\% accuracy on its training crops and 41\,\% on crops from new dives.
+Name the phenomenon, give two possible reasons, and say which number belongs in a report.
+\end{block}
+\end{columns}
+\end{frame}
+
+\begin{frame}{How to prepare}
+\begin{enumerate}
+  \item Re-read the \textbf{\color{coral}Q} answers of your lab notebooks.
+  \item Be able to compute by hand: accuracy, recall, precision and the majority baseline from a small confusion matrix; Euclidean distance and a $k$-NN vote; a path through a decision tree.
+  \item Be able to explain in two sentences: overfitting, transfer learning, why a dive split, validation vs.\ test.
+  \item Be able to judge a mistake with the tree of life.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Outlook: what the professionals add}
+\small
+\begin{itemize}
+  \item \textbf{Fine-tuning} the whole CNN on deep-sea images (Lab 4, Level 5), with \emph{data augmentation} (flips, colour changes).
+  \item \textbf{Ensembles}: average several networks (the 3rd-place team used 8 networks with 100 heads each).
+  \item \textbf{Taxonomy-aware decisions}: choose the label with the smallest \emph{expected} tree distance instead of the most probable one (5th place).
+  \item \textbf{Context}: look at the surroundings, not only the crop (1st and 2nd place) -- like an expert who knows the habitat.
+\end{itemize}
+\vspace{4pt}
+\begin{exampleblock}{Follow-up project (optional)}
+``Do a CNN's mistakes follow the tree of life?'' -- run the published winning models on new FathomNet images and analyse their errors by taxonomic rank.
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[standout]
+Good luck with the challenge!\\[8pt]
+\normalsize Next session: poster session \& final exam
+\end{frame}
+\end{document}
