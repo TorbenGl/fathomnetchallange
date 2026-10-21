@@ -1,0 +1,48 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usetikzlibrary{positioning, arrows.meta}
+
+%% -- same theme and colours as "Deep Learning for Maritime Vision Applications" --
+\usetheme[nofirafonts]{pureminimalistic}
+\renewcommand{\logoheader}{}
+\renewcommand{\logotitle}{}
+\newcommand{\institutepath}{}
+\renewcommand{\logofooter}{}
+
+\definecolor{marineblue}{RGB}{51,65,133}
+\definecolor{marinelight}{RGB}{101,115,183}
+\definecolor{exercisebg}{RGB}{232,236,250}
+\definecolor{accentorange}{RGB}{220,100,30}
+\definecolor{accentgreen}{RGB}{40,150,90}
+\definecolor{accentred}{RGB}{180,30,40}
+\definecolor{lightgray}{RGB}{245,245,245}
+\definecolor{darkgray}{RGB}{80,80,80}
+
+\newtcolorbox{infobox}[1]{%
+  enhanced, colback=lightgray, colframe=marinelight,
+  fonttitle=\bfseries, title={#1}, arc=3pt,
+  left=4pt, right=4pt, top=3pt, bottom=3pt}
+
+%% open question box for the students (orange = "hands-on" colour of the course)
+\newtcolorbox{ideabox}[1]{%
+  enhanced, colback=accentorange!8, colframe=accentorange,
+  coltitle=white, colbacktitle=accentorange,
+  fonttitle=\bfseries, title={#1}, arc=3pt,
+  left=4pt, right=4pt, top=3pt, bottom=3pt}
+
+\title{Can a computer identify deep-sea animals?}
+\subtitle{FathomNet project}
+\author{Torben Globisch}
+
+\begin{document}
+\input{fathomnet_frames}
+\end{document}
