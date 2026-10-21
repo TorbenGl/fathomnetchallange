@@ -1,0 +1,24 @@
+{
+ "probs": [
+  [
+   "Mediaster aequalis",
+   0.7211410403251648
+  ],
+  [
+   "Asteroidea",
+   0.23328576982021332
+  ],
+  [
+   "Hippasteria",
+   0.04557182267308235
+  ]
+ ],
+ "distances": {
+  "Mediaster aequalis": 0,
+  "Hippasteria": 3,
+  "Asteroidea": 4,
+  "Rathbunaster californicus": 8,
+  "Liponema brevicorne": 12
+ },
+ "input": "8854_23377.jpg"
+}

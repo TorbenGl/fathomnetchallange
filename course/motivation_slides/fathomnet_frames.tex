@@ -1,97 +1,149 @@
 %% =====================================================================
-%% Two motivation slides: "Why CNNs?" and "The FathomNet 2025 Challenge".
+%% Two motivation slides: "What is a CNN?" and "The FathomNet 2025 challenge".
 %% Drop into any pureminimalistic deck with \input{fathomnet_frames}
 %% (needs the colours and the infobox/ideabox from fathomnet_motivation.tex).
+%% All images, feature maps, probabilities and distances are real: see make_figures.py.
 %% =====================================================================
 
-%% ---- Slide 1: Why CNNs? ----
-\begin{frame}{Why CNNs? \,--\, Teaching a computer to look like a biologist}
+%% feature-map stack: \fmapstack{x}{y}{width}{layer}
+\newcommand{\fmapstack}[4]{%
+  \foreach \k/\o in {2/0.16,1/0.08,0/0} {
+    \node[inner sep=0, draw=white, line width=0.4pt, anchor=center]
+      at ($(#1,#2)+(\o,\o)$) {\includegraphics[width=#3]{img/fmap_#4_\k}};
+  }%
+}
+
+%% ---- Slide 1: What is a CNN? ----
+\begin{frame}{How can a computer tell species apart? \,--\, Convolutional neural networks}
+\small
+\textbf{The question:} \emph{Mediaster aequalis} or \emph{Hippasteria}? Two goniasterid sea stars.
+A taxonomist uses diagnostic characters -- a \textbf{CNN} learns its own characters from labelled images.
+\par\vspace{3pt}
+\centering
+\begin{tikzpicture}[
+    every node/.style={font=\scriptsize},
+    arr/.style={-{Stealth[scale=0.8]}, thick, marineblue},
+    blockcap/.style={anchor=north, align=center, text width=1.75cm, darkgray, font=\tiny, inner sep=1pt}]
+  % input
+  \node[inner sep=0, draw=marineblue, line width=0.8pt] (in) at (0,0)
+    {\includegraphics[width=1.9cm]{img/cnn_input}};
+  % the four convolution blocks (real ResNet-18 feature maps, 3 channels each)
+  \fmapstack{2.45}{0}{1.55cm}{layer1}
+  \fmapstack{4.55}{0}{1.40cm}{layer2}
+  \fmapstack{6.50}{0}{1.25cm}{layer3}
+  \fmapstack{8.30}{0}{1.10cm}{layer4}
+  % feature vector
+  \foreach \i in {0,...,11} {
+    \pgfmathsetmacro{\shade}{mod(37*\i,60)+15}
+    \fill[marineblue!\shade] (9.75,{-0.84+0.14*\i}) rectangle (9.97,{-0.84+0.14*(\i+1)});
+  }
+  \draw[marineblue] (9.75,-0.84) rectangle (9.97,0.84);
+  % classifier output
+  % real probabilities of this crop (img/figures.json): 72 % / 23 % / 5 %
+  \draw[darkgray!60] (11.85,-0.72) -- (11.85,0.72);
+  \foreach \y/\p/\name/\col in {0.45/0.72/\emph{M.\ aequalis}/accentorange,
+                                0/0.23/Asteroidea/marinelight,
+                                -0.45/0.05/\emph{Hippasteria}/marinelight} {
+    \fill[\col] (11.85,\y-0.13) rectangle ++({1.4*\p},0.26);
+    \node[anchor=east, font=\tiny] at (11.8,\y) {\name};
+    \pgfmathsetmacro{\pc}{int(round(100*\p))}
+    \node[anchor=west, font=\tiny, darkgray] at ({11.9+1.4*\p},\y) {\pc\,\%};
+  }
+  % arrows
+  \draw[arr] (1.0,0) -- (1.55,0);
+  \draw[arr] (3.38,0) -- (3.75,0);
+  \draw[arr] (5.42,0) -- (5.80,0);
+  \draw[arr] (7.30,0) -- (7.65,0);
+  \draw[arr] (8.98,0) -- (9.65,0);
+  \draw[arr] (10.07,0) -- (10.5,0);
+  % captions
+  \node[blockcap] at (0,-1.08)    {\textbf{input}: crop from\\an ROV video};
+  \node[blockcap] at (2.45,-1.08) {\textbf{block 1}: colour,\\surface texture};
+  \node[blockcap] at (4.55,-1.08) {\textbf{block 2}: edges,\\outline};
+  \node[blockcap] at (6.50,-1.08) {\textbf{block 3}: parts\\(arms, arm tips)};
+  \node[blockcap] at (8.30,-1.08) {\textbf{block 4}: the\\whole animal};
+  \node[blockcap] at (9.86,-1.08) {512\\characters};
+  \node[blockcap, text width=2.6cm] at (12.2,-1.08) {\textbf{classifier}: probability\\for each of 79 taxa};
+  % braces
+  \draw[decorate, decoration={brace, amplitude=4pt}, marineblue]
+    (1.55,1.12) -- node[above=4pt, marineblue, font=\scriptsize\bfseries]
+    {convolution layers: small filters slide over the image -- finer to coarser} (9.0,1.12);
+  \draw[decorate, decoration={brace, amplitude=4pt}, accentorange]
+    (9.65,1.12) -- node[above=4pt, accentorange, font=\scriptsize\bfseries] {decision} (13.55,1.12);
+\end{tikzpicture}
+\par\vspace{2pt}
+\raggedright
 \begin{columns}[T]
-\begin{column}{0.56\linewidth}
-  \centering
-  \begin{tikzpicture}[
-      every node/.style={font=\scriptsize},
-      layer/.style={draw=marineblue, fill=marineblue!15, minimum width=0.42cm},
-      arr/.style={-{Stealth[scale=0.8]}, thick, marineblue}]
-    \node[inner sep=0, draw=marineblue, line width=0.8pt] (img) at (0,0)
-      {\includegraphics[width=1.7cm]{img/animal1}};
-    \node[layer, minimum height=1.45cm] (l1) at (1.55,0) {};
-    \node[layer, minimum height=1.05cm, fill=marineblue!30] (l2) at (2.55,0) {};
-    \node[layer, minimum height=0.65cm, fill=marineblue!50] (l3) at (3.55,0) {};
-    \node[draw=accentorange, fill=accentorange!12, rounded corners=3pt, align=center,
-          font=\scriptsize\bfseries, text=accentorange] (out) at (5.0,0) {sea star\\[-1pt]\textit{Hippasteria}};
-    \draw[arr] (img) -- (l1); \draw[arr] (l1) -- (l2);
-    \draw[arr] (l2) -- (l3);  \draw[arr] (l3) -- (out);
-    \foreach \x/\t in {0/ROV image, 1.55/edges, 2.55/{spines,\\[-2pt]textures}, 3.55/{arms,\\[-2pt]body plan}}
-      \node[anchor=north, align=center, darkgray, text width=1.1cm] at (\x,-0.9) {\t};
-  \end{tikzpicture}\\[6pt]
-  \raggedright\small
-  \begin{itemize}
-    \item \textbf{Too much footage, too few experts.} Underwater robots film for
-          hours on every dive -- labelling it by hand is the bottleneck.
-    \item \textbf{A CNN learns its own characters} -- edges $\to$ textures $\to$ body
-          parts -- from labelled examples, much like a student learning an
-          identification key.
-    \item \textbf{It does not replace you:} the CNN pre-sorts, the biologist checks.
-  \end{itemize}
-\end{column}
-\begin{column}{0.40\linewidth}
-  \begin{infobox}{It already works in this project}
-    \small
-    A ready-made CNN + a simple classifier, 79 deep-sea taxa:\\[4pt]
-    \begin{tabular}{@{}lr@{}}
-      guessing the commonest label & \textbf{1\,\%}\\
-      raw pixels                   & \textbf{46\,\%}\\
-      CNN features                 & \textbf{\textcolor{accentgreen}{65\,\%}}\\
-    \end{tabular}\\[4pt]
-    {\scriptsize\color{darkgray} our reference run, random test split}
-  \end{infobox}
-  \vspace{4pt}
-  \begin{ideabox}{Your turn}
-    \small Which characters do \emph{you} use to tell two species apart --
-    and could a camera even see them?
-  \end{ideabox}
-\end{column}
+  \begin{column}{0.32\linewidth}
+    \textbf{\color{marineblue}Convolution.} A filter of a few pixels is moved across the image and
+    lights up wherever its pattern occurs. Each map above is one filter's response.
+  \end{column}
+  \begin{column}{0.32\linewidth}
+    \textbf{\color{marineblue}Training.} The CNN's $\approx$\,11 million numbers are adjusted until its
+    answers match the experts' labels -- learning by example, not by rules.
+  \end{column}
+  \begin{column}{0.32\linewidth}
+    \textbf{\color{marineblue}Pretraining.} This CNN learned its filters on $\approx$\,1.3 million everyday
+    photos (ImageNet); only the last step was trained on FathomNet.
+  \end{column}
 \end{columns}
+\vfill
+{\tiny\color{darkgray} Real example: ResNet-18 + logistic regression; the crop is from a dive not used in
+training. 3 of the 64--512 maps per block shown (brighter = stronger response). Images: FathomNet / MBARI.}
 \end{frame}
 
 %% ---- Slide 2: The FathomNet 2025 challenge ----
-\begin{frame}{The FathomNet 2025 Challenge}
+\newcommand{\fsmall}{\fontsize{7}{8.2}\selectfont}
+\newcommand{\exanimal}[4]{% image, name, note, distance badge
+  \begin{minipage}[t]{1.5cm}\centering
+    \includegraphics[width=1.42cm,height=1.42cm]{img/#1}\\[1pt]
+    \parbox[t][0.62cm]{1.5cm}{\centering\tiny #2\\[-1pt]{\color{darkgray}#3}}\\
+    #4
+  \end{minipage}}
+\newcommand{\dist}[2]{\tcbox[colback=#1, colframe=#1, coltext=white, arc=2pt, boxsep=0pt,
+  left=3pt, right=3pt, top=1pt, bottom=1pt, on line, fontupper=\fsmall\bfseries]{#2}}
+
+\begin{frame}{The FathomNet 2025 Challenge \,--\, and what we can do with it}
+\small
+\textbf{The task:} name the animal in each box -- 79 taxa at mixed ranks, $\approx$\,300 training crops each.
+\textbf{The score is the distance in the tree of life}, averaged over all test animals (0 = perfect, 12 = worst).
+\par\vspace{2pt}
 \begin{columns}[T]
-\begin{column}{0.47\linewidth}
-  \centering
-  \setlength{\tabcolsep}{1pt}\renewcommand{\arraystretch}{0}
-  \begin{tabular}{cccc}
-    \includegraphics[width=1.55cm,height=1.55cm]{img/animal1} &
-    \includegraphics[width=1.55cm,height=1.55cm]{img/animal2} &
-    \includegraphics[width=1.55cm,height=1.55cm]{img/animal3} &
-    \includegraphics[width=1.55cm,height=1.55cm]{img/animal4} \\[1pt]
-    \includegraphics[width=1.55cm,height=1.55cm]{img/animal5} &
-    \includegraphics[width=1.55cm,height=1.55cm]{img/animal6} &
-    \includegraphics[width=1.55cm,height=1.55cm]{img/animal7} &
-    \includegraphics[width=1.55cm,height=1.55cm]{img/animal8} \\
-  \end{tabular}\\[5pt]
-  {\tiny\color{darkgray} sea star · bubblegum coral · glass sponge · octopus ·
-   crab · prawn · sea pig · rockfish \quad (images: FathomNet / MBARI)}\\[6pt]
-  \raggedright\small
-  \textbf{\color{marineblue}23{,}664} expert-labelled animals \;·\;
-  \textbf{\color{marineblue}79} taxa \;·\; \textbf{\color{marineblue}7} phyla \;·\;
-  \textbf{\color{marineblue}1{,}465} ROV dives
+\begin{column}{0.555\linewidth}
+  \textbf{\color{marineblue}Example: the truth is \emph{Mediaster aequalis}}\\[2pt]
+  \exanimal{ex0}{\emph{Mediaster aequalis}}{correct}{\dist{accentgreen}{0}}\hfill
+  \exanimal{ex1}{\emph{Hippasteria}}{same family}{\dist{accentgreen!60!accentorange}{3}}\hfill
+  \exanimal{ex2}{Asteroidea}{the class only}{\dist{accentorange!85!accentgreen}{4}}\hfill
+  \exanimal{ex3}{\emph{Rathbunaster californicus}}{other order}{\dist{accentorange}{8}}\hfill
+  \exanimal{ex4}{\emph{Liponema brevicorne}}{sea anemone}{\dist{accentred}{12}}\\[4pt]
+  \textbf{\color{marineblue}The winners' models are public} -- we can run and dissect them:\\[1pt]
+  {\fsmall
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{@{}llr@{}}
+    \toprule
+    place & model -- what it looks at & score\\
+    \midrule
+    1st & large model (16\,GB) -- the animal \emph{and its surroundings} & 1.45\\
+    3rd & 8 $\times$ WideResNet-101 -- the crop only & 1.83\\
+    5th & EfficientNet + a graph of the taxonomy (60\,MB) & --\\
+    \bottomrule
+  \end{tabular}}
 \end{column}
-\begin{column}{0.49\linewidth}
-  \small
-  \textbf{The task:} name the animal in each box -- as deep in the tree of life as you can.\\[4pt]
-  \textbf{The score is biological:} mixing up two sea stars is a small mistake,
-  sea star vs.\ coral a big one.\\[4pt]
-  \textbf{The catch:} the winning models reach $\approx$\,98\,\% on their training images,
-  but only \textcolor{accentred}{\textbf{57--61\,\%}} on dives they have never seen.\\[6pt]
-  \begin{ideabox}{Your ideas wanted}
-    \small
-    \begin{itemize}
-      \item Which animals would \emph{you} find hard -- and why?
-      \item Which mistakes are acceptable for your research?
-      \item What else would help -- depth, location, behaviour, \dots?
-      \item What would \emph{you} like to ask this data?
+\begin{column}{0.41\linewidth}
+  \begin{infobox}{What we already measured}
+    \fsmall
+    3rd and 5th place: \textbf{$\approx$\,98\,\%} correct on their training images, only
+    \textbf{\textcolor{accentred}{57--61\,\%}} on dives they have never seen. Almost half of the
+    3rd-place model's mistakes are in \textbf{another phylum}.
+  \end{infobox}
+  \vspace{1pt}
+  \begin{ideabox}{Let's question the question}
+    \fsmall
+    \begin{itemize}\setlength{\itemsep}{1pt}
+      \item Asteroidea scores 4, a wrong sea-star species 8 -- should a model rather answer cautiously?
+      \item Porifera (a phylum) next to species: one task or many?
+      \item Every taxon has $\approx$\,300 crops -- nature is not balanced.
+      \item 1st place also looks at the habitat. What do \emph{you} use -- depth, substrate, behaviour?
     \end{itemize}
   \end{ideabox}
 \end{column}
